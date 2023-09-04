@@ -9,7 +9,7 @@ const route = useRoute();
 
     <template #nav>
       <nav class="flex align-center gap-4 p-4">
-        <NuxtLink to="/upload" class="n-link-base"> This Is UPLOAD </NuxtLink>
+        <NuxtLink to="/upload" class="n-link-base">Upload</NuxtLink>
       </nav>
     </template>
 
