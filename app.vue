@@ -3,7 +3,7 @@ const route = useRoute();
 </script>
 
 <template>
-  <NuxtExampleLayout repo="nuxt/examples" example="routing/pages">
+  <NuxtLayout>
     <NuxtLoadingIndicator />
     <NuxtPage />
 
@@ -18,5 +18,5 @@ const route = useRoute();
         Current route: <code>{{ route.path }}</code>
       </div>
     </template>
-  </NuxtExampleLayout>
+  </NuxtLayout>
 </template>
