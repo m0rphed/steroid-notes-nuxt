@@ -5,7 +5,7 @@
     <h1
       class="
         text-3xl text-gray-100
-        hover:text-green-400
+        hover:text-purple-400
         transition-colors
         duration-400
         ease-in-out
