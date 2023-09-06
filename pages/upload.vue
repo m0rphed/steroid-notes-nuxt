@@ -45,16 +45,37 @@
       >
         Delete Image
       </button>
+      <button
+        class="
+          bg-purple-600
+          text-gray-100
+          px-4
+          py-2
+          rounded-md
+          mt-4
+          hover:bg-purple-500
+          transition-colors
+          duration-200
+          ease-in-out
+        "
+        @click="runOCR"
+      >
+        Run OCR
+      </button>
+      <p class="text-gray-100 mt-4" v-if="extractedText">{{ extractedText }}</p>
     </div>
   </div>
 </template>
 
 <script>
+import Tesseract from 'tesseract.js';
+
 export default {
   data() {
     return {
       imageUrl: null,
       fileName: null,
+      extractedText: null,
     };
   },
   methods: {
@@ -70,9 +91,19 @@ export default {
     deleteImage() {
       this.imageUrl = null;
       this.fileName = null;
+      this.extractedText = null;
       // Clear the file input element to allow selecting the same file again
       const input = document.getElementById('image-upload');
       input.value = '';
+    },
+    runOCR() {
+      Tesseract.recognize(this.imageUrl)
+        .then((result) => {
+          this.extractedText = result.text;
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     },
   },
 };
