@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const route = useRoute();
+const route = useRoute()
 </script>
 
 <template>
@@ -7,8 +7,7 @@ const route = useRoute();
     <NuxtLayout>
       <nav class="flex align-center gap-4 p-4 bg-gray-700">
         <NuxtLink
-          to="/"
-          class="
+          to="/" class="
             text-gray-400
             n-link-base
             cursor-pointer
@@ -21,8 +20,7 @@ const route = useRoute();
           Home
         </NuxtLink>
         <NuxtLink
-          to="/upload"
-          class="
+          to="/upload" class="
             text-gray-400
             n-link-base
             cursor-pointer
