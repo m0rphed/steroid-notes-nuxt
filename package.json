@@ -6,16 +6,20 @@
     "dev-windows": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@nuxt/ui": "^0.4.1",
-    "autoprefixer": "^10.4.15",
-    "nuxt": "^3.7.0",
-    "postcss": "^8.4.29",
-    "tailwindcss": "^3.3.3"
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "tesseract.js": "^4.1.2"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.41.0",
+    "@nuxt/ui": "^0.4.1",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.49.0",
+    "nuxt": "^3.7.0",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
   }
 }
