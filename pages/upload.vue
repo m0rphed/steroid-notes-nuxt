@@ -1,4 +1,5 @@
 <script>
+// eslint-disable-next-line import/default
 import Tesseract from 'tesseract.js'
 
 export default {
@@ -6,7 +7,7 @@ export default {
     return {
       imageUrl: null,
       fileName: null,
-      extractedText: null,
+      extractedText: null
     }
   },
   methods: {
@@ -35,68 +36,38 @@ export default {
         .catch((error) => {
           console.error(error)
         })
-    },
-  },
+    }
+  }
 }
 </script>
 
 <template>
-  <div class="bg-gray-900 p-8 flex flex-col items-center justify-center h-screen">
+  <div class="flex h-screen flex-col items-center justify-center bg-gray-900 p-8">
     <label
-      for="image-upload" class="
-        bg-gray-700
-        text-gray-100
-        px-4
-        py-2
-        rounded-md
-        cursor-pointer
-        hover:bg-gray-600
-        transition-colors
-        duration-200
-        ease-in-out
-      "
+      for="image-upload"
+      class="cursor-pointer rounded-md bg-gray-700 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-gray-600"
     >
       <span class="text-lg font-medium">Upload Image</span>
     </label>
-    <input id="image-upload" type="file" class="hidden" @change="handleFileUpload">
-    <img v-if="imageUrl" :src="imageUrl" class="mt-8">
+    <input id="image-upload" type="file" class="hidden" @change="handleFileUpload" />
+    <img v-if="imageUrl" :src="imageUrl" class="mt-8" />
     <div v-if="imageUrl">
-      <p class="text-gray-400 mt-4">
+      <p class="mt-4 text-gray-400">
         {{ fileName }}
       </p>
       <button
-        class="
-          bg-red-600
-          text-gray-100
-          px-4
-          py-2
-          rounded-md
-          mt-4
-          hover:bg-red-500
-          transition-colors
-          duration-200
-          ease-in-out
-        " @click="deleteImage"
+        class="mt-4 rounded-md bg-red-600 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-red-500"
+        @click="deleteImage"
       >
         Delete Image
       </button>
       <button
-        class="
-          bg-purple-600
-          text-gray-100
-          px-4
-          py-2
-          rounded-md
-          mt-4
-          hover:bg-purple-500
-          transition-colors
-          duration-200
-          ease-in-out
-        " @click="runOCR"
+        class="mt-4 rounded-md bg-purple-600 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-purple-500"
+        @click="runOCR"
       >
         Run OCR
       </button>
-      <p v-if="extractedText" class="text-gray-100 mt-4">
+      <p v-if="extractedText" class="mt-4 text-gray-100">
         {{ extractedText }}
       </p>
     </div>
