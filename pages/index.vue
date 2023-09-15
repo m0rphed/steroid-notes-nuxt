@@ -1,16 +1,6 @@
 <template>
-  <div
-    class="bg-gray-900 p-8 flex flex-col items-center justify-center h-screen"
-  >
-    <h1
-      class="
-        text-3xl text-gray-100
-        hover:text-purple-400
-        transition-colors
-        duration-400
-        ease-in-out
-      "
-    >
+  <div class="flex h-screen flex-col items-center justify-center bg-gray-900 p-8">
+    <h1 class="duration-400 text-3xl text-gray-100 transition-colors ease-in-out hover:text-purple-400">
       👋 Main page of the app
     </h1>
   </div>

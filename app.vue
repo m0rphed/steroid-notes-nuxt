@@ -1,40 +1,20 @@
-<script setup lang="ts">
-const route = useRoute()
-</script>
-
 <template>
   <div>
-    <NuxtLayout>
-      <nav class="flex align-center gap-4 p-4 bg-gray-700">
-        <NuxtLink
-          to="/" class="
-            text-gray-400
-            n-link-base
-            cursor-pointer
-            hover:text-green-400
-            transition-colors
-            duration-300
-            ease-in-out
-          "
-        >
-          Home
-        </NuxtLink>
-        <NuxtLink
-          to="/upload" class="
-            text-gray-400
-            n-link-base
-            cursor-pointer
-            hover:text-green-400
-            transition-colors
-            duration-300
-            ease-in-out
-          "
-        >
-          Upload
-        </NuxtLink>
-      </nav>
-
-      <NuxtPage />
-    </NuxtLayout>
+    <nav class="align-center flex gap-4 bg-gray-700 p-4">
+      <NuxtLink
+        to="/"
+        class="n-link-base cursor-pointer text-gray-400 transition-colors duration-300 ease-in-out hover:text-green-400"
+      >
+        Home
+      </NuxtLink>
+      <NuxtLink
+        to="/upload"
+        class="n-link-base cursor-pointer text-gray-400 transition-colors duration-300 ease-in-out hover:text-green-400"
+      >
+        Upload
+      </NuxtLink>
+    </nav>
+    <NuxtPage />
+    <UNotifications />
   </div>
 </template>
