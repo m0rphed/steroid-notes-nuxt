@@ -1,6 +1,7 @@
 <script setup>
-import { createWorker } from 'tesseract.js'
+import Tesseract from 'tesseract.js';
 const toast = useToast()
+
 </script>
 
 <template>
@@ -44,6 +45,7 @@ const toast = useToast()
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -71,24 +73,15 @@ export default {
       const input = document.getElementById('image-upload')
       input.value = ''
     },
-    async runOCR() {
-      const worker = createWorker({
-        logger: (m) => console.log(m)
-      })
-
-      try {
-        await worker.load()
-        await worker.loadLanguage(this.selectedLanguage)
-        await worker.initialize(this.selectedLanguage)
-        console.log("recognition...")
-        const { data: { text } } = await worker.recognize(this.imageUrl)
-        console.log(text)
-        this.extractedText = text
-      } catch (error) {
-        console.error(error)
-      } finally {
-        await worker.terminate()
-      }
+    runOCR() {
+      Tesseract.recognize(
+      this.imageUrl,
+      this.selectedLanguage,
+      { logger: m => console.log(m) }
+    ).then(({ data: { text } }) => {
+      console.log(text);
+      this.extractedText = text
+    })
     }
   }
 }
