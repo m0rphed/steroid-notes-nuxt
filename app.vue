@@ -13,6 +13,12 @@
       >
         Upload
       </NuxtLink>
+      <NuxtLink
+        to="/editor"
+        class="n-link-base cursor-pointer text-gray-400 transition-colors duration-300 ease-in-out hover:text-green-400"
+      >
+        Editor
+      </NuxtLink>
     </nav>
     <NuxtPage />
     <UNotifications />

@@ -1,15 +1,12 @@
 <script setup>
 import Tesseract from 'tesseract.js';
 const toast = useToast()
-
 </script>
 
 <template>
   <div class="flex h-screen flex-col items-center justify-center bg-gray-900 p-8">
-    <label
-      for="image-upload"
-      class="cursor-pointer rounded-md bg-gray-700 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-gray-600"
-    >
+    <label for="image-upload"
+      class="cursor-pointer rounded-md bg-gray-700 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-gray-600">
       <span class="text-lg font-medium">Upload Image</span>
     </label>
     <input id="image-upload" type="file" class="hidden" @change="handleFileUpload" />
@@ -28,14 +25,12 @@ const toast = useToast()
       <p class="mt-4 text-gray-400">{{ fileName }}</p>
       <button
         class="mt-4 rounded-md bg-red-600 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-red-500"
-        @click="deleteImage"
-      >
+        @click="deleteImage">
         Delete Image
       </button>
       <button
         class="mt-4 rounded-md bg-purple-600 px-4 py-2 text-gray-100 transition-colors duration-200 ease-in-out hover:bg-purple-500"
-        @click="runOCR"
-      >
+        @click="runOCR">
         Run OCR
       </button>
 
@@ -75,13 +70,13 @@ export default {
     },
     runOCR() {
       Tesseract.recognize(
-      this.imageUrl,
-      this.selectedLanguage,
-      { logger: m => console.log(m) }
-    ).then(({ data: { text } }) => {
-      console.log(text);
-      this.extractedText = text
-    })
+        this.imageUrl,
+        this.selectedLanguage,
+        { logger: m => console.log(m) }
+      ).then(({ data: { text } }) => {
+        console.log(text);
+        this.extractedText = text
+      })
     }
   }
 }
