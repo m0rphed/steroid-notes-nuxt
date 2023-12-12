@@ -1,6 +1,5 @@
 <script setup>
 import Tesseract from 'tesseract.js';
-const toast = useToast()
 </script>
 
 <template>
@@ -19,7 +18,7 @@ const toast = useToast()
         <!-- Add more language options here -->
       </select>
     </div>
-    <UButton label="Show toast" @click="toast.add({ title: 'Hello world!' })" />
+    <!-- <UButton label="Show toast" @click="toast.add({ title: 'Hello world!' })" /> -->
     <img v-if="imageUrl" :src="imageUrl" class="mt-8" />
     <div v-if="imageUrl">
       <p class="mt-4 text-gray-400">{{ fileName }}</p>
